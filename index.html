@@ -35,6 +35,815 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ NAV Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  text-decoration: none;
+}
+.nav-brand .amplify {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--purple);
+  letter-spacing: -0.5px;
+}
+.nav-brand .by {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--light-gray);
+}
+.nav-right { display: flex; align-items: center; gap: 24px; }
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-link:hover { color: var(--near-black); }
+.nav-cta {
+  background: var(--purple);
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--purple-dark); }
+
+/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ HERO Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+.hero {
+  padding: 140px 32px 80px;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  background: var(--purple-bg);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--purple);
+  margin-bottom: 24px;
+  letter-spacing: 0.5px;
+}
+.hero h1 {
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 900;
+  color: var(--near-black);
+  line-height: 1.1;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+.hero h1 span { color: var(--purple); }
+.hero p {
+  font-size: 17px;
+  color: var(--gray);
+  max-width: 540px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--purple);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.hero-cta:hover { background: var(--purple-dark); transform: translateY(-1px); }
+.hero-cta svg { width: 16px; height: 16px; }
+
+/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ SERVICES STRIP Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+.services-strip {
+  padding: 64px 32px;
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.services-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+.services-inner h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--near-black);
+  margin-bottom: 8px;
+}
+.services-inner .subtitle {
+  font-size: 15px;
+  color: var(--gray);
+  margin-bottom: 40px;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.s-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 16px;
+  text-align: center;
+  transition: all 0.2s;
+}
+.s-card:hover {
+  border-color: var(--purple-light);
+  box-shadow: 0 4px 20px rgba(108,92,231,0.08);
+}
+.s-card .num {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--purple);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.s-card h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--near-black);
+  line-height: 1.4;
+}
+
+/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ ELIGIBILITY STRIP Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+.eligibility-strip {
+  padding: 64px 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.eligibility-strip h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--near-black);
+  margin-bottom: 8px;
+  text-align: center;
+}
+.eligibility-strip .subtitle {
+  font-size: 15px;
+  color: var(--gray);
+  text-align: center;
+  margin-bottom: 32px;
+}
+.elig-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.elig-col h3 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.dot-green { background: var(--green); }
+.dot-amber { background: var(--amber); }
+.elig-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.elig-list li {
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.6;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.elig-list li span {
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.elig-list li .ck { background: rgba(0,200,83,0.1); color: var(--green); }
+.elig-list li .inf { background: rgba(255,152,0,0.1); color: var(--amber); }
+
+/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ FORM SECTION Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+.form-section {
+  padding: 80px 32px;
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border);
+}
+.form-wrapper {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.form-wrapper h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--near-black);
+  text-align: center;
+  margin-bottom: 8px;
+}
+.form-wrapper .subtitle {
+  font-size: 15px;
+  color: var(--gray);
+  text-align: center;
+  margin-bottom: 40px;
+}
+.form-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+}
+.form-group {
+  margin-bottom: 20px;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--near-black);
+  margin-bottom: 6px;
+}
+.form-group label .req { color: var(--red); }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--dark-text);
+  background: #fff;
+  transition: border-color 0.2s;
+  outline: none;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(108,92,231,0.1);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #BBBBC8;
+}
+.form-group textarea { resize: vertical; min-height: 80px; }
+.form-group select { cursor: pointer; }
+.form-group .hint {
+  font-size: 12px;
+  color: var(--light-gray);
+  margin-top: 4px;
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 28px 0;
+}
+.section-title-sm {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--near-black);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-title-sm .badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--purple-bg);
+  color: var(--purple);
+  letter-spacing: 0.5px;
+}
+
+.checkbox-group { display: flex; flex-wrap: wrap; gap: 8px; }
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  color: var(--dark-text);
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+}
+.checkbox-label:hover { border-color: var(--purple-light); }
+.checkbox-label input { display: none; }
+.checkbox-label input:checked + .cb-text {
+  color: var(--purple);
+  font-weight: 600;
+}
+.checkbox-label:has(input:checked) {
+  border-color: var(--purple);
+  background: var(--purple-bg);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--purple);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 8px;
+}
+.submit-btn:hover { background: var(--purple-dark); }
+.submit-btn:disabled {
+  background: var(--light-gray);
+  cursor: not-allowed;
+}
+.form-footer {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--light-gray);
+}
+
+/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ SUCCESS STATE Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+.success-state {
+  display: none;
+  text-align: center;
+  padding: 60px 20px;
+}
+.success-state.show { display: block; }
+.success-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(0,200,83,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 28px;
+  color: var(--green);
+}
+.success-state h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--near-black);
+  margin-bottom: 8px;
+}
+.success-state p {
+  font-size: 15px;
+  color: var(--gray);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ FOOTER Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+.footer {
+  padding: 32px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+.footer-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+.footer-brand .amplify { font-size: 16px; font-weight: 800; color: var(--purple); }
+.footer-brand .by { font-size: 11px; color: var(--light-gray); }
+.footer p {
+  font-size: 12px;
+  color: var(--light-gray);
+  margin-bottom: 4px;
+}
+.footer a { color: var(--gray); text-decoration: none; }
+.footer a:hover { color: var(--purple); }
+.footer-links { display: flex; gap: 20px; justify-content: center; margin-top: 12px; }
+.footer-links a { font-size: 13px; color: var(--gray); }
+
+/* Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ RESPONSIVE Ã¢ÂÂÃ¢ÂÂÃ¢ÂÂ */
+@media (max-width: 768px) {
+  .nav { padding: 12px 20px; }
+  .nav-link { display: none; }
+  .hero { padding: 120px 20px 60px; }
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .elig-grid { grid-template-columns: 1fr; }
+  .form-card { padding: 24px; }
+  .form-row { grid-template-columns: 1fr; }
+  .form-section { padding: 60px 20px; }
+  .eligibility-strip { padding: 48px 20px; }
+  .services-strip { padding: 48px 20px; }
+}
+@media (max-width: 480px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .checkbox-group { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-brand">
+    <span class="amplify">Amplify</span>
+    <span class="by">by Grootin</span>
+  </a>
+  <div class="nav-right">
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#eligibility" class="nav-link">Eligibility</a>
+    <a href="#apply" class="nav-cta">Apply Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pill">A Grootin Service</div>
+  <h1><span>Amplify</span> Your Music. Grow Your Fanbase.</h1>
+  <p>Full-stack music marketing and growth services built for independent artists and labels on the Grootin platform.</p>
+  <a href="#apply" class="hero-cta">
+    Apply for Amplify
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</section>
+
+<!-- SERVICES -->
+<section class="services-strip" id="services">
+  <div class="services-inner">
+    <h2>What We Do</h2>
+    <p class="subtitle">12 music marketing services to grow your career.</p>
+    <div class="services-grid">
+      <div class="s-card"><div class="num">01</div><h3>Instagram Reels Strategy</h3></div>
+      <div class="s-card"><div class="num">02</div><h3>Spotify Ad Campaigns</h3></div>
+      <div class="s-card"><div class="num">03</div><h3>Instagram & Meta Ads</h3></div>
+      <div class="s-card"><div class="num">04</div><h3>Playlist Pitching</h3></div>
+      <div class="s-card"><div class="num">05</div><h3>YouTube Optimization</h3></div>
+      <div class="s-card"><div class="num">06</div><h3>Influencer Collabs</h3></div>
+      <div class="s-card"><div class="num">07</div><h3>Pre-Save Campaigns</h3></div>
+      <div class="s-card"><div class="num">08</div><h3>Community Building</h3></div>
+      <div class="s-card"><div class="num">09</div><h3>Press & Blog Outreach</h3></div>
+      <div class="s-card"><div class="num">10</div><h3>Content Calendar</h3></div>
+      <div class="s-card"><div class="num">11</div><h3>Spotify Profile Optimization</h3></div>
+      <div class="s-card"><div class="num">12</div><h3>Analytics & Reporting</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- ELIGIBILITY -->
+<section class="eligibility-strip" id="eligibility">
+  <h2>Who Can Apply?</h2>
+  <p class="subtitle">Amplify is for serious artists ready to invest in growth.</p>
+  <div class="elig-grid">
+    <div class="elig-col">
+      <h3><span class="dot dot-green"></span> You're Eligible If</h3>
+      <ul class="elig-list">
+        <li><span class="ck">&#10003;</span> Active Grootin user with at least 1 release</li>
+        <li><span class="ck">&#10003;</span> Original music only (no uncleared covers)</li>
+        <li><span class="ck">&#10003;</span> Account in good standing</li>
+        <li><span class="ck">&#10003;</span> 500+ monthly listeners on any platform</li>
+        <li><span class="ck">&#10003;</span> Willing to commit to 3-month campaign</li>
+        <li><span class="ck">&#10003;</span> Active Instagram or YouTube</li>
+        <li><span class="ck">&#10003;</span> Labels: 3+ active artists on roster</li>
+      </ul>
+    </div>
+    <div class="elig-col">
+      <h3><span class="dot dot-amber"></span> Good to Know</h3>
+      <ul class="elig-list">
+        <li><span class="inf">!</span> Priority for artists releasing 1+ tracks per quarter</li>
+        <li><span class="inf">!</span> Must provide high-quality masters & artwork</li>
+        <li><span class="inf">!</span> Campaign budgets discussed on strategy call</li>
+        <li><span class="inf">!</span> Results vary by genre & content quality</li>
+        <li><span class="inf">!</span> Must be responsive during active campaigns</li>
+        <li><span class="inf">!</span> Currently for India-based artists only</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section class="form-section" id="apply">
+  <div class="form-wrapper">
+    <h2>Apply for Amplify</h2>
+    <p class="subtitle">Fill in your details and we'll get back within 48 hours.</p>
+
+    <div class="form-card">
+      <form id="amplifyForm" onsubmit="handleSubmit(event)">
+
+        <div class="section-title-sm">Basic Information</div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Artist / Band Name <span class="req">*</span></label>
+            <input type="text" name="artist_name" placeholder="e.g. DJ Neon" required>
+          </div>
+          <div class="form-group">
+            <label>Your Real Name <span class="req">*</span></label>
+            <input type="text" name="real_name" placeholder="e.g. Rahul Sharma" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email <span class="req">*</span></label>
+            <input type="email" name="email" placeholder="you@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Phone <span class="req">*</span></label>
+            <input type="tel" name="phone" placeholder="+91 98765 43210" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Artist or Label? <span class="req">*</span></label>
+            <select name="type" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="independent_artist">Independent Artist</option>
+              <option value="label">Record Label</option>
+              <option value="band">Band / Group</option>
+              <option value="manager">Artist Manager</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Primary Genre <span class="req">*</span></label>
+            <select name="genre" required>
+              <option value="" disabled selected>Select genre</option>
+              <option value="bollywood">Bollywood / Film</option>
+              <option value="indie_pop">Indie Pop</option>
+              <option value="hip_hop">Hip Hop / Rap</option>
+              <option value="electronic">Electronic / EDM</option>
+              <option value="classical">Classical / Semi-Classical</option>
+              <option value="devotional">Devotional / Spiritual</option>
+              <option value="folk">Folk / Regional</option>
+              <option value="rnb">R&B / Soul</option>
+              <option value="rock">Rock / Metal</option>
+              <option value="punjabi">Punjabi</option>
+              <option value="lo_fi">Lo-Fi / Ambient</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="section-title-sm">Platform Presence <span class="badge">REQUIRED</span></div>
+
+        <div class="form-group">
+          <label>Grootin Username / Profile Link <span class="req">*</span></label>
+          <input type="text" name="grootin_id" placeholder="e.g. @djneon or grootin.in/artist/djneon" required>
+          <div class="hint">You must be an active Grootin user to apply</div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Spotify Artist Link</label>
+            <input type="url" name="spotify" placeholder="https://open.spotify.com/artist/...">
+          </div>
+          <div class="form-group">
+            <label>Apple Music Link</label>
+            <input type="url" name="apple_music" placeholder="https://music.apple.com/...">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Instagram Handle <span class="req">*</span></label>
+            <input type="text" name="instagram" placeholder="@yourhandle" required>
+          </div>
+          <div class="form-group">
+            <label>YouTube Channel</label>
+            <input type="url" name="youtube" placeholder="https://youtube.com/@yourchannel">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Number of Releases <span class="req">*</span></label>
+            <select name="releases" required>
+              <option value="" disabled selected>Select</option>
+              <option value="1-3">1 - 3 releases</option>
+              <option value="4-10">4 - 10 releases</option>
+              <option value="11-25">11 - 25 releases</option>
+              <option value="25+">25+ releases</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Monthly Listeners (approx.) <span class="req">*</span></label>
+            <select name="listeners" required>
+              <option value="" disabled selected>Select range</option>
+              <option value="under_500">Under 500</option>
+              <option value="500-2000">500 - 2,000</option>
+              <option value="2000-10000">2,000 - 10,000</option>
+              <option value="10000-50000">10,000 - 50,000</option>
+              <option value="50000+">50,000+</option>
+            </select>
+          </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="section-title-sm">Services You're Interested In</div>
+
+        <div class="form-group">
+          <label>Select all that apply</label>
+          <div class="checkbox-group">
+            <label class="checkbox-label"><input type="checkbox" name="services" value="reels"><span class="cb-text">Instagram Reels</span></label>
+            <label class="checkbox-label"><input type="checkbox" name="services" value="spotify_ads"><span class="cb-text">Spotify Ads</span></label>
+            <label class="checkbox-label"><input type="checkbox" name="services" value="meta_ads"><span class="cb-text">Meta Ads</span></label>
+            <label class="checkbox-label"><input type="checkbox" name="services" value="playlisting"><span class="cb-text">Playlisting</span></label>
+            <label class="checkbox-label"><input type="checkbox" name="services" value="youtube"><span class="cb-text">YouTube</span></label>
+            <label class="checkbox-label"><input type="checkbox" name="services" value="influencer"><span class="cb-text">Influencer Collabs</span></label>
+            <label class="checkbox-label"><input type="checkbox" name="services" value="presave"><span class="cb-text">Pre-Save Campaigns</span></label>
+            <label class="checkbox-label"><input type="checkbox" name="services" value="community"><span class="cb-text">Community Building</span></label>
+            <label class="checkbox-label"><input type="checkbox" name="services" value="press"><span class="cb-text">Press & PR</span></label>
+            <label class="checkbox-label"><input type="checkbox" name="services" value="content"><span class="cb-text">Content Strategy</span></label>
+            <label class="checkbox-label"><input type="checkbox" name="services" value="profile_opt"><span class="cb-text">Profile Optimization</span></label>
+            <label class="checkbox-label"><input type="checkbox" name="services" value="analytics"><span class="cb-text">Analytics</span></label>
+          </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="section-title-sm">Your Goals</div>
+
+        <div class="form-group">
+          <label>What do you want to achieve with Amplify? <span class="req">*</span></label>
+          <textarea name="goals" placeholder="e.g. I want to grow my Spotify listeners to 10K, get on more playlists, and build a strong Instagram presence before my next album drop..." required></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Next Release Date</label>
+            <input type="text" name="next_release" placeholder="e.g. April 2026">
+          </div>
+          <div class="form-group">
+            <label>How did you hear about us?</label>
+            <select name="source">
+              <option value="" disabled selected>Select</option>
+              <option value="grootin_platform">Grootin Platform</option>
+              <option value="instagram">Instagram</option>
+              <option value="friend">Friend / Word of Mouth</option>
+              <option value="youtube">YouTube</option>
+              <option value="google">Google Search</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">Submit Application</button>
+      </form>
+
+      <div class="success-state" id="successState">
+        <div class="success-icon">&#10003;</div>
+        <h3>Application Submitted!</h3>
+        <p>Thank you for applying to Amplify by Grootin. Our team will review your profile and get back to you at the email you provided within 48 hours.</p>
+      </div>
+
+      <p class="form-footer">By submitting, you agree to Grootin's <a href="https://grootin.in/legal/terms-conditions" target="_blank">Terms & Conditions</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-brand">
+    <span class="amplify">Amplify</span>
+    <span class="by">by Grootin</span>
+  </div>
+  <p>Music marketing & growth for independent artists.</p>
+  <p>artists@grootin.in</p>
+  <div class="footer-links">
+    <a href="https://grootin.in" target="_blank">grootin.in</a>
+    <a href="https://instagram.com/grootinindia" target="_blank">@grootinindia</a>
+    <a href="https://grootin.in/legal/privacy-policy" target="_blank">Privacy</a>
+    <a href="https://grootin.in/legal/terms-conditions" target="_blank">Terms</a>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = document.getElementById('amplifyForm');
+  const btn = document.getElementById('submitBtn');
+  const success = document.getElementById('successState');
+
+  btn.disabled = true;
+  btn.textContent = 'Submitting...';
+
+  const formData = new FormData(form);
+  const data = {};
+  formData.forEach((value, key) => {
+    if (data[key]) {
+      if (Array.isArray(data[key])) data[key].push(value);
+      else data[key] = [data[key], value];
+    } else {
+      data[key] = value;
+    }
+  });
+
+  // Send to email via mailto fallback
+  // In production, replace FORM_ENDPOINT with your webhook URL
+  // (Google Sheets, Airtable, Make.com, or any API)
+  const FORM_ENDPOINT = 'https://hook.eu1.make.com/pno2hlx29bd688wx55l8oxrp8yfvjgej';
+
+  if (FORM_ENDPOINT) {
+    fetch(FORM_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(() => showSuccess()).catch(() => showSuccess());
+  } else {
+    const body = Object.entries(data).map(([k, v]) => `${k}: ${Array.isArray(v) ? v.join(', ') : v}`).join('%0A');
+    const mailto = `mailto:artists@grootin.in?subject=Amplify Application: ${encodeURIComponent(data.artist_name || 'New Artist')}&body=${body}`;
+    window.open(mailto, '_blank');
+    showSuccess();
+  }
+
+  function showSuccess() {
+    form.style.display = 'none';
+    success.classList.add('show');
+  }
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amplify by Grootin | Music Marketing & Growth for Artists</title>
+<meta name="description" content="Full-stack music marketing and growth services for independent artists and labels. Apply now to amplify your music career.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --purple: #6C5CE7;
+  --purple-light: #A29BFE;
+  --purple-bg: #F0EEFF;
+  --purple-dark: #5A4BD1;
+  --near-black: #1A1A2E;
+  --dark-text: #2D2D3F;
+  --gray: #666680;
+  --light-gray: #9999AA;
+  --border: #E8E8F0;
+  --bg: #FFFFFF;
+  --bg-soft: #FAFAFE;
+  --green: #00C853;
+  --amber: #FF9800;
+  --red: #FF5252;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--dark-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
 /* âââ NAV âââ */
 .nav {
   position: fixed;
