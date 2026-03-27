@@ -41,7 +41,7 @@ body {
   overflow-x: hidden;
 }
 
-/* âââ REVEAL ANIMATIONS âââ */
+/* ─── REVEAL ANIMATIONS ─── */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -56,7 +56,7 @@ body {
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 
-/* âââ NAV âââ */
+/* ─── NAV ─── */
 .nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -129,11 +129,11 @@ body {
   transform: translateY(-1px);
 }
 
-/* âââ MOBILE NAV âââ */
+/* ─── MOBILE NAV ─── */
 .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
 .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--text-secondary); margin: 5px 0; transition: 0.3s; border-radius: 2px; }
 
-/* âââ HERO âââ */
+/* ─── HERO ─── */
 .hero {
   position: relative;
   padding: 160px 40px 100px;
@@ -268,7 +268,7 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* âââ STATS BAR âââ */
+/* ─── STATS BAR ─── */
 .stats-bar {
   padding: 48px 40px;
   border-top: 1px solid var(--border);
@@ -313,7 +313,7 @@ body {
   letter-spacing: 1px;
 }
 
-/* âââ SERVICES âââ */
+/* ─── SERVICES ─── */
 .services {
   padding: 100px 40px;
   position: relative;
@@ -413,7 +413,7 @@ body {
   position: relative; z-index: 1;
 }
 
-/* âââ ELIGIBILITY âââ */
+/* ─── ELIGIBILITY ─── */
 .eligibility {
   padding: 100px 40px;
   background: var(--bg-elevated);
@@ -454,7 +454,7 @@ body {
 .elig-item .icon.green { color: var(--green); }
 .elig-item .icon.amber { color: var(--amber); }
 
-/* âââ FORM SECTION âââ */
+/* ─── FORM SECTION ─── */
 .form-section {
   padding: 100px 40px;
   position: relative;
@@ -634,7 +634,7 @@ body {
 .form-footer a { color: var(--purple-bright); text-decoration: none; }
 .form-footer a:hover { text-decoration: underline; }
 
-/* âââ FOOTER âââ */
+/* ─── FOOTER ─── */
 .footer {
   padding: 60px 40px 40px;
   text-align: center;
@@ -649,17 +649,18 @@ body {
   margin-bottom: 12px;
 }
 .footer-brand .amplify {
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 22px;
+  font-family: 'Fredoka', sans-serif;
+  font-size: 24px;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--purple-bright), var(--neon-pink));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--purple);
+  letter-spacing: -0.5px;
 }
 .footer-brand .by {
-  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
   color: var(--text-muted);
+  text-transform: lowercase;
 }
 .footer p {
   color: var(--text-muted);
@@ -680,7 +681,7 @@ body {
 }
 .footer-links a:hover { color: var(--purple-bright); }
 
-/* âââ RESPONSIVE âââ */
+/* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
@@ -744,7 +745,7 @@ body {
         Apply for Amplify
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
       </a>
-      <a href="#services" class="hero-secondary">Explore Services â</a>
+      <a href="#services" class="hero-secondary">Explore Services ↓</a>
     </div>
   </div>
 </section>
@@ -780,62 +781,62 @@ body {
     <div class="section-subtitle reveal">Everything you need to go from underground to unstoppable.</div>
     <div class="services-grid">
       <div class="s-card reveal">
-        <div class="s-icon">ðµ</div>
+        <div class="s-icon">🎵</div>
         <div class="num">01</div>
         <h3>Playlist Pitching</h3>
       </div>
       <div class="s-card reveal reveal-delay-1">
-        <div class="s-icon">ð±</div>
+        <div class="s-icon">📱</div>
         <div class="num">02</div>
         <h3>Instagram Reels Strategy</h3>
       </div>
       <div class="s-card reveal reveal-delay-2">
-        <div class="s-icon">ð¯</div>
+        <div class="s-icon">🎯</div>
         <div class="num">03</div>
         <h3>Spotify Ad Campaigns</h3>
       </div>
       <div class="s-card reveal reveal-delay-3">
-        <div class="s-icon">ð</div>
+        <div class="s-icon">📊</div>
         <div class="num">04</div>
         <h3>Meta / IG Ads</h3>
       </div>
       <div class="s-card reveal">
-        <div class="s-icon">â¶ï¸</div>
+        <div class="s-icon">▶️</div>
         <div class="num">05</div>
         <h3>YouTube Promotion</h3>
       </div>
       <div class="s-card reveal reveal-delay-1">
-        <div class="s-icon">âï¸</div>
+        <div class="s-icon">✍️</div>
         <div class="num">06</div>
         <h3>PR & Blog Features</h3>
       </div>
       <div class="s-card reveal reveal-delay-2">
-        <div class="s-icon">ð¨</div>
+        <div class="s-icon">🎨</div>
         <div class="num">07</div>
         <h3>Cover Art & Visuals</h3>
       </div>
       <div class="s-card reveal reveal-delay-3">
-        <div class="s-icon">ð¬</div>
+        <div class="s-icon">🎬</div>
         <div class="num">08</div>
         <h3>Music Video Edits</h3>
       </div>
       <div class="s-card reveal">
-        <div class="s-icon">ð</div>
+        <div class="s-icon">📝</div>
         <div class="num">09</div>
         <h3>Content Calendar</h3>
       </div>
       <div class="s-card reveal reveal-delay-1">
-        <div class="s-icon">ð</div>
+        <div class="s-icon">📈</div>
         <div class="num">10</div>
         <h3>Analytics & Reporting</h3>
       </div>
       <div class="s-card reveal reveal-delay-2">
-        <div class="s-icon">ð¤</div>
+        <div class="s-icon">🤝</div>
         <div class="num">11</div>
         <h3>Brand Partnerships</h3>
       </div>
       <div class="s-card reveal reveal-delay-3">
-        <div class="s-icon">ð</div>
+        <div class="s-icon">🚀</div>
         <div class="num">12</div>
         <h3>Release Strategy</h3>
       </div>
@@ -852,13 +853,13 @@ body {
     <div class="eligibility-grid">
       <div class="elig-col reveal">
         <h3><span class="dot-green"></span> You're Eligible If</h3>
-        <div class="elig-item"><span class="icon green">â</span> Active Grootin user with at least 1 release</div>
-        <div class="elig-item"><span class="icon green">â</span> Original music only (no uncleared covers)</div>
-        <div class="elig-item"><span class="icon green">â</span> Account in good standing</div>
-        <div class="elig-item"><span class="icon green">â</span> 500+ monthly listeners on any platform</div>
-        <div class="elig-item"><span class="icon green">â</span> Willing to commit to 3-month campaign</div>
-        <div class="elig-item"><span class="icon green">â</span> Active Instagram or YouTube</div>
-        <div class="elig-item"><span class="icon green">â</span> Labels: 3+ active artists on roster</div>
+        <div class="elig-item"><span class="icon green">✓</span> Active Grootin user with at least 1 release</div>
+        <div class="elig-item"><span class="icon green">✓</span> Original music only (no uncleared covers)</div>
+        <div class="elig-item"><span class="icon green">✓</span> Account in good standing</div>
+        <div class="elig-item"><span class="icon green">✓</span> 500+ monthly listeners on any platform</div>
+        <div class="elig-item"><span class="icon green">✓</span> Willing to commit to 3-month campaign</div>
+        <div class="elig-item"><span class="icon green">✓</span> Active Instagram or YouTube</div>
+        <div class="elig-item"><span class="icon green">✓</span> Labels: 3+ active artists on roster</div>
       </div>
       <div class="elig-col reveal reveal-delay-2">
         <h3><span class="dot-amber"></span> Good to Know</h3>
@@ -975,9 +976,9 @@ body {
             <label>Number of Releases <span class="req">*</span></label>
             <select name="releases" required>
               <option value="" disabled selected>Select</option>
-              <option value="1-3">1â3 tracks</option>
-              <option value="4-10">4â10 tracks</option>
-              <option value="11-25">11â25 tracks</option>
+              <option value="1-3">1–3 tracks</option>
+              <option value="4-10">4–10 tracks</option>
+              <option value="11-25">11–25 tracks</option>
               <option value="25+">25+ tracks</option>
             </select>
           </div>
@@ -986,9 +987,9 @@ body {
             <select name="listeners" required>
               <option value="" disabled selected>Select range</option>
               <option value="0-500">Under 500</option>
-              <option value="500-5000">500 â 5,000</option>
-              <option value="5000-25000">5,000 â 25,000</option>
-              <option value="25000-100000">25,000 â 1 Lakh</option>
+              <option value="500-5000">500 – 5,000</option>
+              <option value="5000-25000">5,000 – 25,000</option>
+              <option value="25000-100000">25,000 – 1 Lakh</option>
               <option value="100000+">1 Lakh+</option>
             </select>
           </div>
@@ -1058,8 +1059,8 @@ body {
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-brand">
-    <span class="amplify">Amplify</span>
-    <span class="by">by Grootin</span>
+    <span class="amplify">amplify</span>
+    <span class="by">by grootin</span>
   </div>
   <p>Music marketing & growth for independent artists.</p>
   <p>artists@grootin.in</p>
@@ -1072,7 +1073,7 @@ body {
 </footer>
 
 <script>
-// âââ SCROLL REVEAL âââ
+// ─── SCROLL REVEAL ───
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1082,12 +1083,12 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// âââ NAV SCROLL EFFECT âââ
+// ─── NAV SCROLL EFFECT ───
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// âââ STATS COUNTER ANIMATION âââ
+// ─── STATS COUNTER ANIMATION ───
 const statsObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1110,7 +1111,7 @@ const statsObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 document.querySelectorAll('.stat-number[data-target]').forEach(el => statsObserver.observe(el));
 
-// âââ SMOOTH ANCHOR SCROLL âââ
+// ─── SMOOTH ANCHOR SCROLL ───
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     e.preventDefault();
@@ -1119,7 +1120,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-// âââ FORM SUBMIT âââ
+// ─── FORM SUBMIT ───
 function handleSubmit(e) {
   e.preventDefault();
   const form = document.getElementById('amplifyForm');
