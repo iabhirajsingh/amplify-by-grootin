@@ -766,86 +766,10 @@ body {
   .grootin-bar .bar-text { display: none; }
 }
 
-/* ─── GROOTIN CROSS-SELL ─── */
-.grootin-crossell {
-  background: linear-gradient(135deg, #0D0D12 0%, #130C07 100%);
-  border-top: 1px solid rgba(255,75,0,0.12);
-  border-bottom: 1px solid rgba(255,75,0,0.08);
-  padding: 64px 40px;
-}
-.crossell-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 48px;
-}
-.crossell-badge {
-  display: inline-block;
-  background: rgba(255,75,0,0.1);
-  color: var(--grootin-orange);
-  border: 1px solid rgba(255,75,0,0.22);
-  border-radius: 20px;
-  padding: 4px 13px;
-  font-size: 10.5px;
-  font-weight: 700;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-  font-family: 'Space Grotesk', sans-serif;
-}
-.crossell-left h3 {
-  font-size: 26px;
-  font-weight: 800;
-  color: var(--text-primary);
-  line-height: 1.25;
-  margin-bottom: 12px;
-  letter-spacing: -0.3px;
-}
-.crossell-left p {
-  font-size: 15px;
-  color: var(--text-secondary);
-  max-width: 440px;
-  line-height: 1.65;
-}
-.crossell-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 10px;
-  flex-shrink: 0;
-}
-.crossell-cta {
-  display: inline-block;
-  background: var(--grootin-orange);
-  color: #fff;
-  padding: 14px 30px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 15px;
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  white-space: nowrap;
-  box-shadow: 0 4px 24px var(--grootin-orange-glow);
-}
-.crossell-cta:hover {
-  background: #E83D00;
-  box-shadow: 0 6px 32px rgba(255,75,0,0.4);
-  transform: translateY(-2px);
-}
-.crossell-note {
-  font-size: 12px;
-  color: var(--text-muted);
-  text-align: right;
-}
-@media (max-width: 720px) {
-  .crossell-inner { flex-direction: column; align-items: flex-start; gap: 28px; }
-  .crossell-right { align-items: flex-start; width: 100%; }
-  .crossell-cta { width: 100%; text-align: center; }
-  .crossell-note { text-align: left; }
-  .grootin-crossell { padding: 48px 20px; }
-}
+  /* footer grootin hint */
+  .footer-dist{margin-top:18px;font-size:12px;color:var(--text-muted)}
+  .footer-dist a{color:rgba(255,75,0,.7);text-decoration:none;transition:color .2s}
+  .footer-dist a:hover{color:var(--grootin-orange)}
 </style>
 </head>
 <body>
@@ -1202,20 +1126,7 @@ body {
   </div>
 </section>
 
-<!-- GROOTIN CROSS-SELL -->
-<section class="grootin-crossell">
-  <div class="crossell-inner">
-    <div class="crossell-left">
-      <div class="crossell-badge">Powered by Grootin</div>
-      <h3>Get your music heard<br>on every platform</h3>
-      <p>Loudr grows your fanbase. Grootin distributes your music to 150+ streaming platforms — Spotify, Apple Music, JioSaavn and more — with full master ownership and transparent royalty tracking.</p>
-    </div>
-    <div class="crossell-right">
-      <a href="https://grootin.in" target="_blank" rel="noopener" class="crossell-cta">Explore Grootin Distribution →</a>
-      <p class="crossell-note">Free to start &nbsp;·&nbsp; No hidden fees &nbsp;·&nbsp; 5,000+ artists</p>
-    </div>
-  </div>
-</section>
+
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -1231,6 +1142,7 @@ body {
     <a href="https://grootin.in/legal/privacy-policy" target="_blank">Privacy</a>
     <a href="https://grootin.in/legal/terms-conditions" target="_blank">Terms</a>
   </div>
+  <p class="footer-dist">Need music distribution? <a href="https://grootin.in" target="_blank" rel="noopener">Grootin — 150+ platforms →</a></p>
 </footer>
 
 <script>
