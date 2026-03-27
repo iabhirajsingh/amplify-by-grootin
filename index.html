@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Amplify by Grootin | Music Marketing & Growth for Artists</title>
-<meta name="description" content="Full-stack music marketing and growth services for independent artists and labels. Apply now to amplify your music career.">
+<title>Loudr by Grootin | Music Marketing & Growth for Artists</title>
+<meta name="description" content="Full-stack music marketing and growth services for independent artists and labels. Apply now to grow your music career with Loudr by Grootin.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -78,20 +78,21 @@ body {
   text-decoration: none;
   line-height: 1;
 }
-.nav-brand .amplify {
+.nav-brand .loudr {
   font-family: 'Fredoka', sans-serif;
   font-size: 30px;
   font-weight: 700;
-  color: var(--purple);
+  color: var(--purple-bright);
   letter-spacing: -0.5px;
-  text-transform: lowercase;
 }
 .nav-brand .by {
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
   color: var(--text-muted);
-  text-transform: lowercase;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  padding-bottom: 2px;
 }
 .nav-right { display: flex; align-items: center; gap: 28px; }
 .nav-link {
@@ -648,19 +649,21 @@ body {
   gap: 6px;
   margin-bottom: 12px;
 }
-.footer-brand .amplify {
+.footer-brand .loudr {
   font-family: 'Fredoka', sans-serif;
   font-size: 24px;
   font-weight: 700;
-  color: var(--purple);
+  color: var(--purple-bright);
   letter-spacing: -0.5px;
 }
 .footer-brand .by {
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
   color: var(--text-muted);
-  text-transform: lowercase;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  padding-bottom: 2px;
 }
 .footer p {
   color: var(--text-muted);
@@ -717,7 +720,7 @@ body {
 <!-- NAV -->
 <nav class="nav" id="navbar">
   <a href="#" class="nav-brand">
-    <span class="amplify">amplify</span>
+    <span class="loudr">Loudr</span>
     <span class="by">by grootin</span>
   </a>
   <div class="nav-right">
@@ -738,11 +741,11 @@ body {
     <div class="hero-pill">
       <span class="dot"></span> Now accepting applications
     </div>
-    <h1><span class="gradient-text">Amplify</span> Your Music.<br>Grow Your Fanbase.</h1>
-    <p>Full-stack music marketing and growth services built for independent artists and labels on the Grootin platform.</p>
+    <h1>Get <span class="gradient-text">Loudr.</span><br>Grow Your Fanbase.</h1>
+    <p>Music marketing and growth services built for independent artists and labels on the Grootin platform.</p>
     <div class="hero-buttons">
       <a href="#apply" class="hero-cta">
-        Apply for Amplify
+        Apply for Loudr
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
       </a>
       <a href="#services" class="hero-secondary">Explore Services ↓</a>
@@ -777,7 +780,7 @@ body {
   <div class="services-glow"></div>
   <div class="services-inner">
     <div class="section-label reveal">What We Do</div>
-    <div class="section-title reveal">12 Services to <span class="gradient-text">Grow</span> Your Career</div>
+    <div class="section-title reveal">12 Services to Get <span class="gradient-text">Loudr</span></div>
     <div class="section-subtitle reveal">Everything you need to go from underground to unstoppable.</div>
     <div class="services-grid">
       <div class="s-card reveal">
@@ -849,7 +852,7 @@ body {
   <div class="eligibility-inner">
     <div class="section-label reveal">Requirements</div>
     <div class="section-title reveal">Who Can Apply?</div>
-    <div class="section-subtitle reveal">Amplify is for serious artists ready to invest in growth.</div>
+    <div class="section-subtitle reveal">Loudr is for serious artists ready to invest in real growth.</div>
     <div class="eligibility-grid">
       <div class="elig-col reveal">
         <h3><span class="dot-green"></span> You're Eligible If</h3>
@@ -879,11 +882,11 @@ body {
   <div class="form-section-glow"></div>
   <div class="form-container">
     <div class="section-label reveal">Get Started</div>
-    <div class="section-title reveal">Apply for <span class="gradient-text">Amplify</span></div>
+    <div class="section-title reveal">Apply for <span class="gradient-text">Loudr</span></div>
     <div class="section-subtitle reveal">Fill in your details and we'll get back within 48 hours.</div>
 
     <div class="form-card reveal">
-      <form id="amplifyForm" onsubmit="handleSubmit(event)">
+      <form id="loudrForm" onsubmit="handleSubmit(event)">
         <div class="section-title-sm">Basic Info <span class="badge">Required</span></div>
 
         <div class="form-row">
@@ -1019,7 +1022,7 @@ body {
         <div class="section-title-sm">Your Goals</div>
 
         <div class="form-group">
-          <label>What do you want to achieve with Amplify? <span class="req">*</span></label>
+          <label>What do you want to achieve with Loudr? <span class="req">*</span></label>
           <textarea name="goals" placeholder="e.g. I want to grow my Spotify listeners to 10K, get on more playlists, and build a strong Instagram presence before my next album drop..." required></textarea>
         </div>
 
@@ -1048,7 +1051,7 @@ body {
       <div class="success-state" id="successState">
         <div class="success-icon">&#10003;</div>
         <h3>Application Submitted!</h3>
-        <p>Thank you for applying to Amplify by Grootin. Our team will review your profile and get back to you within 48 hours.</p>
+        <p>Thank you for applying to Loudr by Grootin. Our team will review your profile and get back to you within 48 hours.</p>
       </div>
 
       <p class="form-footer">By submitting, you agree to Grootin's <a href="https://grootin.in/legal/terms-conditions" target="_blank">Terms & Conditions</a></p>
@@ -1059,7 +1062,7 @@ body {
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-brand">
-    <span class="amplify">amplify</span>
+    <span class="loudr">Loudr</span>
     <span class="by">by grootin</span>
   </div>
   <p>Music marketing & growth for independent artists.</p>
@@ -1123,7 +1126,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 // ─── FORM SUBMIT ───
 function handleSubmit(e) {
   e.preventDefault();
-  const form = document.getElementById('amplifyForm');
+  const form = document.getElementById('loudrForm');
   const btn = document.getElementById('submitBtn');
   const success = document.getElementById('successState');
 
