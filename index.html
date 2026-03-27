@@ -1484,13 +1484,59 @@ body {
   position: relative;
   z-index: 2;
 }
-.results-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+/* carousel wrapper */
+.results-carousel {
+  position: relative;
   margin-top: 56px;
 }
+.results-carousel::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 100px; height: calc(100% - 20px);
+  background: linear-gradient(to left, var(--bg-primary) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 4;
+}
+.results-grid {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 4px 40px 24px;
+  cursor: grab;
+  user-select: none;
+}
+.results-grid:active { cursor: grabbing; }
+.results-grid::-webkit-scrollbar { display: none; }
+/* arrow buttons */
+.carousel-btn {
+  position: absolute;
+  top: calc(50% - 12px);
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s, border-color 0.25s, background 0.25s;
+  font-size: 16px;
+}
+.results-carousel:hover .carousel-btn { opacity: 1; }
+.carousel-btn:hover { border-color: var(--border-hover); background: rgba(139,92,246,0.12); }
+.carousel-btn.c-prev { left: 4px; }
+.carousel-btn.c-next { right: 4px; }
+.carousel-btn[disabled] { opacity: 0 !important; pointer-events: none; }
 .cs-card {
+  flex: 0 0 430px;
+  scroll-snap-align: start;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 20px;
@@ -1625,12 +1671,23 @@ body {
   font-weight: 600;
   margin-bottom: 2px;
 }
-@media (max-width: 900px) {
-  .results-grid { grid-template-columns: 1fr; }
-}
 @media (max-width: 768px) {
-  .results { padding: 60px 20px; }
+  .results { padding: 60px 0px; }
+  .results-grid { padding: 4px 20px 24px; gap: 16px; }
+  .cs-card { flex: 0 0 340px; }
 }
+/* NDA card styles */
+.cs-card.nda-card::before { background: linear-gradient(90deg, #f59e0b, #ef4444, #8b5cf6); }
+.cs-badge.nda { background: rgba(245,158,11,0.12); color: #f59e0b; border: 1px solid rgba(245,158,11,0.3); }
+.cs-cover.nda-cover-1 { background: linear-gradient(135deg, #1a0533 0%, #0d1a40 50%, #001a20 100%); display:flex; align-items:center; justify-content:center; }
+.cs-cover.nda-cover-2 { background: linear-gradient(135deg, #0d2200 0%, #001a2e 50%, #1a001a 100%); display:flex; align-items:center; justify-content:center; }
+.cs-redacted { display:inline-block; background:rgba(255,255,255,0.12); border-radius:4px; color:transparent; user-select:none; }
+.nda-social { display:flex; align-items:center; gap:10px; padding-top:16px; border-top:1px solid var(--border); margin-top: auto; }
+.nda-lock-icon { width:32px; height:32px; border-radius:8px; background:rgba(245,158,11,0.1); border:1px solid rgba(245,158,11,0.2); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.nda-social-text { font-size:12px; color:var(--text-muted); line-height:1.4; }
+.nda-social-text span { color:#f59e0b; font-weight:500; }
+.cs-playlist-icon.amber { background: linear-gradient(135deg, #f59e0b, #ef4444); }
+.cs-playlist-text strong.amber { color: #f59e0b; }
 .cs-social {
   display: flex;
   align-items: center;
@@ -1871,7 +1928,11 @@ body {
     <p class="section-label reveal">Real Results</p>
     <h2 class="section-title reveal">Artists we've helped <span class="gradient-text">go Loudr</span></h2>
     <p class="section-subtitle reveal">Numbers straight from Spotify. No fluff.</p>
-    <div class="results-grid">
+    </div><!-- /results-inner -->
+    <div class="results-carousel">
+      <button class="carousel-btn c-prev" aria-label="Previous" disabled>&#8592;</button>
+      <button class="carousel-btn c-next" aria-label="Next">&#8594;</button>
+      <div class="results-grid">
 
       <!-- Zephyrtone — Editorial Placement -->
       <div class="cs-card editorial-card reveal">
@@ -1971,8 +2032,78 @@ body {
         </div>
       </div>
 
-    </div>
-  </div>
+      <!-- NDA Card 1 — Hindi Pop -->
+      <div class="cs-card nda-card">
+        <div class="cs-track">
+          <div class="cs-cover nda-cover-1">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(245,158,11,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div class="cs-track-info">
+            <div class="cs-track-name"><span class="cs-redacted">██████████████</span></div>
+            <div class="cs-artist">Confidential Artist · Hindi Pop</div>
+          </div>
+        </div>
+        <span class="cs-badge nda">🔒 NDA Protected</span>
+        <div class="cs-stats">
+          <div class="cs-stat"><div class="cs-stat-value">420K+</div><div class="cs-stat-label">Streams</div></div>
+          <div class="cs-stat"><div class="cs-stat-value">890+</div><div class="cs-stat-label">Playlists</div></div>
+          <div class="cs-stat"><div class="cs-stat-value">3,800</div><div class="cs-stat-label">Playlist Adds</div></div>
+        </div>
+        <p class="cs-result">A Bollywood-adjacent Hindi pop release with no prior Spotify presence. <strong>Placed on 890+ playlists within 60 days</strong> — including Spotify editorial programming, regional Hindi charts, and mood-based algorithmic stations. The campaign was built on pre-release momentum: pitches submitted 4 weeks before the drop date. Crossed multiple markets within the first month.</p>
+        <div class="cs-playlist">
+          <div class="cs-playlist-icon amber">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+          </div>
+          <div class="cs-playlist-text">
+            <strong class="amber">Spotify Editorial (Hindi) · New Music Friday India</strong>
+            Also: Hindi Pop Rising · Bollywood Workout · Mood Booster · Discover Weekly
+          </div>
+        </div>
+        <div class="nda-social">
+          <div class="nda-lock-icon">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(245,158,11,0.8)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div class="nda-social-text"><span>Artist identity protected under NDA.</span> Full results shared during onboarding calls.</div>
+        </div>
+      </div>
+
+      <!-- NDA Card 2 — Electronic / Global Bass -->
+      <div class="cs-card nda-card">
+        <div class="cs-track">
+          <div class="cs-cover nda-cover-2">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="rgba(245,158,11,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div class="cs-track-info">
+            <div class="cs-track-name"><span class="cs-redacted">████████████</span></div>
+            <div class="cs-artist">Confidential Artist · Electronic / Global Bass</div>
+          </div>
+        </div>
+        <span class="cs-badge nda">🔒 NDA Protected</span>
+        <div class="cs-stats">
+          <div class="cs-stat"><div class="cs-stat-value">1.1M+</div><div class="cs-stat-label">Streams</div></div>
+          <div class="cs-stat"><div class="cs-stat-value">2,400+</div><div class="cs-stat-label">Playlists</div></div>
+          <div class="cs-stat"><div class="cs-stat-value">9,200</div><div class="cs-stat-label">Playlist Adds</div></div>
+        </div>
+        <p class="cs-result">A genre-crossing electronic release that crossed <strong>1.1M streams across a 6-month campaign window</strong> — one of the highest-performing campaigns on the Grootin roster. 2,400+ playlists driven by a combination of editorial pitching and Spotify's algorithmic engine. The track found audiences across South Asia, Europe, and the Middle East without a single paid ad.</p>
+        <div class="cs-playlist">
+          <div class="cs-playlist-icon amber">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+          </div>
+          <div class="cs-playlist-text">
+            <strong class="amber">Electronic Rising · Global Bass (Spotify Editorial)</strong>
+            Also: New Music Friday · Mixes · Chill Electronic · Discover Weekly · On Repeat
+          </div>
+        </div>
+        <div class="nda-social">
+          <div class="nda-lock-icon">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="rgba(245,158,11,0.8)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div class="nda-social-text"><span>Artist identity protected under NDA.</span> Full results shared during onboarding calls.</div>
+        </div>
+      </div>
+
+    </div><!-- /results-grid -->
+    </div><!-- /results-carousel -->
 </section>
 
 <!-- PRICING -->
@@ -2407,6 +2538,52 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ─── RESULTS CAROUSEL ───
+(function() {
+  const grid = document.querySelector('.results-grid');
+  const prevBtn = document.querySelector('.carousel-btn.c-prev');
+  const nextBtn = document.querySelector('.carousel-btn.c-next');
+  if (!grid) return;
+
+  const CARD_W = () => {
+    const card = grid.querySelector('.cs-card');
+    if (!card) return 454;
+    return card.offsetWidth + parseInt(getComputedStyle(grid).gap || 24);
+  };
+
+  // arrow navigation
+  function updateArrows() {
+    const maxScroll = grid.scrollWidth - grid.clientWidth;
+    prevBtn.disabled = grid.scrollLeft <= 4;
+    nextBtn.disabled = grid.scrollLeft >= maxScroll - 4;
+  }
+  prevBtn.addEventListener('click', () => { grid.scrollBy({ left: -CARD_W(), behavior: 'smooth' }); });
+  nextBtn.addEventListener('click', () => { grid.scrollBy({ left:  CARD_W(), behavior: 'smooth' }); });
+  grid.addEventListener('scroll', updateArrows, { passive: true });
+  updateArrows();
+
+  // drag-to-scroll
+  let isDragging = false, startX = 0, scrollStart = 0;
+  grid.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.pageX;
+    scrollStart = grid.scrollLeft;
+    grid.style.cursor = 'grabbing';
+    grid.style.scrollBehavior = 'auto';
+  });
+  window.addEventListener('mouseup', () => {
+    isDragging = false;
+    grid.style.cursor = 'grab';
+    grid.style.scrollBehavior = 'smooth';
+    updateArrows();
+  });
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    grid.scrollLeft = scrollStart - (e.pageX - startX);
+  });
+})();
 
 // ─── NAV SCROLL EFFECT ───
 window.addEventListener('scroll', () => {
