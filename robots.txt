@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://loudr.grootin.in/sitemap.xml
